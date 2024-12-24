@@ -1,14 +1,17 @@
+import { HeroSection } from "@/components/home/hero-section"
+import { StatsSection } from "@/components/home/stats-section"
+import { FeaturedCompanies } from "@/components/home/featured-companies"
+import { FeaturesSection } from "@/components/home/features-section"
+import { CTASection } from "@/components/home/cta-section"
+
 export default function Home() {
   return (
-    <div
-      style={{
-        maxWidth: 1280,
-        margin: '0 auto',
-        padding: '2rem',
-        textAlign: 'center',
-      }}
-    >
-      Start prompting.
+    <div>
+      <HeroSection />
+      <StatsSection />
+      <FeaturedCompanies />
+      <FeaturesSection />
+      <CTASection />
     </div>
-  );
+  )
 }

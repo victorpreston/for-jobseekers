@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useSession, signOut } from "next-auth/react"
 import { Button } from "@/components/ui/button"
 import { BriefcaseIcon, SearchIcon, UserIcon, MenuIcon } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,6 +33,7 @@ export function NavigationMenu() {
                 Find Jobs
               </Button>
             </Link>
+            <ThemeToggle />
             {session ? (
               <>
                 <Link href="/dashboard">
@@ -61,13 +63,19 @@ export function NavigationMenu() {
                 </DropdownMenu>
               </>
             ) : (
-              <Link href="/auth/signin">
-                <Button>Sign In</Button>
-              </Link>
+              <div className="flex items-center space-x-4">
+                <Link href="/auth/signin">
+                  <Button variant="ghost">Sign In</Button>
+                </Link>
+                <Link href="/auth/signup">
+                  <Button>Sign Up</Button>
+                </Link>
+              </div>
             )}
           </div>
 
-          <div className="sm:hidden flex items-center">
+          <div className="sm:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -97,9 +105,14 @@ export function NavigationMenu() {
                     </DropdownMenuItem>
                   </>
                 ) : (
-                  <DropdownMenuItem asChild>
-                    <Link href="/auth/signin">Sign In</Link>
-                  </DropdownMenuItem>
+                  <>
+                    <DropdownMenuItem asChild>
+                      <Link href="/auth/signin">Sign In</Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link href="/auth/signup">Sign Up</Link>
+                    </DropdownMenuItem>
+                  </>
                 )}
               </DropdownMenuContent>
             </DropdownMenu>
