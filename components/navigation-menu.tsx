@@ -33,6 +33,12 @@ export function NavigationMenu() {
                 Find Jobs
               </Button>
             </Link>
+            <Link href="/companies">
+              <Button variant="ghost">
+                <SearchIcon className="h-4 w-4 mr-2" />
+                Browse Companies
+              </Button>
+            </Link>
             <ThemeToggle />
             {session ? (
               <>
