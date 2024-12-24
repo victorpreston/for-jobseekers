@@ -51,7 +51,7 @@ export default function SignIn() {
       <Card className="w-full max-w-md">
         <CardHeader>
           <h2 className="text-center text-3xl font-bold tracking-tight">
-            Sign in to ForJobSeekers
+            Sign in to your account
           </h2>
           <p className="text-center text-sm text-muted-foreground mt-2">
             Find your next remote opportunity
